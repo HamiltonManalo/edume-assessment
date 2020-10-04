@@ -6,18 +6,11 @@ export namespace ExpansionService {
         for(const s in currentExpansions)
           for(const c in map)
             output.push(currentExpansions[s] + map[c])
-          return filter(output);
+          return output;
       }
-      function filter(arr: string[]): string[] {
-        const realWords: string[] = []
-        arr.forEach(x => {
-
-          console.log(`currentWord: ${x}, currentMap ${wordMap[x.length][x]}`)
-          if(wordMap[x.length][x] == undefined)
-            return
-
-          realWords.push(x);
-        })
-        return realWords
+      export function filter(word: string): boolean {
+          if(wordMap[word.length][word] == undefined)
+            return false
+          return true
       }
 }

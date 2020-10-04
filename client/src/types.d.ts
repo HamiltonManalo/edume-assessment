@@ -1,0 +1,3 @@
+type fechResponse = {
+    data: string[]
+}
