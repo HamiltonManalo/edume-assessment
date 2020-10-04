@@ -15,7 +15,7 @@ const ConfigureExpansionController = (app) => app.post('/api/expand', (req, res)
     // assumption that this is an internal API and all values can convert to number
     const expandedValues = body.string.split('')
         .map(num => numberService_1.NumberService.getAlphabetValues(Number(num)))
-        .reduce((n, c) => expansionService_1.ExpansionService.Expand(n, c)).filter(expansionService_1.ExpansionService.filter);
+        .reduce((n, c) => expansionService_1.ExpansionService.expand(n, c)).filter(expansionService_1.ExpansionService.filterForOnlyRealWords);
     res.status(200).json({ data: expandedValues });
 });
 exports.default = ConfigureExpansionController;

@@ -49,20 +49,9 @@ function App () {
             guesses={suggestedWords}
             guessSelectionHandler={handleGuessSelection}
           />
-          <div
-            style={{
-              display: 'flex',
-              flexFlow: 'wrap',
-              justifyContent: 'center'
-            }}
-          >
-            {numpadValues.map(x => (
-              <NumberBtn
-                digit={x.digit}
-                values={x.values}
-                clickHandler={handleInput}
-              />
-            ))}
+          <div style={{ display: 'flex', flexFlow: 'wrap', justifyContent: 'center' }}>
+
+            {numpadValues.map(x => (<NumberBtn digit={x.digit} values={x.values} clickHandler={handleInput} /> ))}
           </div>
         </div>
       </header>

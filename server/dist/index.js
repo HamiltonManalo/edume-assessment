@@ -12,7 +12,6 @@ app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.use(body_parser_1.default.json());
 app.use('/', express_1.default.static('dist'));
 expansionController_1.default(app);
-// start the Express server
 app.listen(port, () => {
     console.log(`server started at http://localhost:${port}`);
 });
